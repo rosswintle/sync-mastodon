@@ -7,6 +7,7 @@
  * Text Domain:     sync-mastodon
  * Domain Path:     /languages
  * Version:         1.1.0
+ * GitHub Plugin URI: https://github.com/afragen/git-updater
  *
  * @package         Sync_Mastodon
  */
