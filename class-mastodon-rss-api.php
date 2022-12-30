@@ -22,19 +22,21 @@ class Mastodon_API {
 	 * @return Mastodon_Post[]
 	 */
 	public function call() {
-		// Set the feed cache time
-		add_filter( 'wp_feed_cache_transient_lifetime', self::class . '::filter_feed_lifetime', 10, 2 );
 
 		$url = Sync_Mastodon_Options::get_rss_url();
 
-		remove_filter( 'wp_feed_cache_transient_lifetime', self::class . '::filter_feed_lifetime', 10 );
 
 		if ( ! $url ) {
 			Sync_Mastodon::log( "Feed URL is not set" );
 			return [];
 		}
 
+		// Set the feed cache time
+		add_filter( 'wp_feed_cache_transient_lifetime', self::class . '::filter_feed_lifetime', 10, 2 );
+
 		$feed = fetch_feed( $url );
+
+		remove_filter( 'wp_feed_cache_transient_lifetime', self::class . '::filter_feed_lifetime', 10 );
 
 		if ( is_wp_error( $feed ) ) {
 			return [];

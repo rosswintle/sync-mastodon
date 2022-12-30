@@ -50,6 +50,9 @@ Once you have installed and activated the plugin, follow the instructions in the
 
 == Changelog ==
 
+= 1.2.1 =
+* Fix RSS feed caching
+
 = 1.2.0 =
 * Changes sync interval to five minutes
 
