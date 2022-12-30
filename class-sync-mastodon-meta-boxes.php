@@ -12,29 +12,31 @@ class Sync_Mastodon_Meta_Boxes {
 		add_action( 'save_post', [ $this, 'save' ], 10, 2 );
 
 		register_meta( 'post', 'url', [
-		    //'object_subtype' => 'mastodon-post',
+		    //'object_subtype' => Sync_Mastodon_Options::get_post_type(),
 		    'type' => 'string',
     		'description' => 'The URL of the bookmark',
     		'single' => true,
     		'show_in_rest' => true,
     	]);
 
-		register_rest_field('mastodon-post', 'content_raw', [
-			'get_callback' => function ($post_array) {
-				return $post_array['content']['raw'];
-			},
-    		'schema' => [
-    			'description' => 'The raw content',
-    			'type'        => 'string',
-    			],
-    	]);
+		// TODO: Need to properly register Mastodon meta fields
+		// register_rest_field(Sync_Mastodon_Options::get_post_type(), 'content_raw', [
+		// 	'get_callback' => function ($post_array) {
+		// 		return $post_array['content']['raw'];
+		// 	},
+    	// 	'schema' => [
+    	// 		'description' => 'The raw content',
+    	// 		'type'        => 'string',
+    	// 		],
+    	// ]);
 
 	}
 
 	public function add_meta_boxes() {
-		add_meta_box( 'sync-mastodon-details', 'Mastodon details', [ $this, 'meta_box' ], 'mastodon-post', 'normal', 'default' );
+		add_meta_box( 'sync-mastodon-details', 'Mastodon details', [ $this, 'meta_box' ], Sync_Mastodon_Options::get_post_type(), 'normal', 'default' );
 	}
 
+	// TODO: Use the right meta boxes/fields
 	public function meta_box( $post ) {
 		wp_nonce_field( basename( __FILE__ ), 'sync-mastodon-meta-nonce' );
 		?>
@@ -56,8 +58,8 @@ class Sync_Mastodon_Meta_Boxes {
 		/* Get the post type object. */
 		$post_type = get_post_type_object( $post->post_type );
 
-	    // If this isn't a 'mastodon-post' post, don't update it.
-    	if ( 'mastodon-post' != $post_type->name ) {
+	    // If this isn't a 'mastodon-post' post (or whatever is set), don't update it.
+    	if ( Sync_Mastodon_Options::get_post_type() != $post_type->name ) {
     		return;
     	}
 

@@ -1,4 +1,9 @@
 <?php
+use SyncMastodon\Sync_Mastodon_Options;
+
+if (Sync_Mastodon_Options::get_post_type() !== 'mastodon-post') {
+	return;
+}
 
 /**
  * Registers the `mastodon_post` post type.
@@ -13,10 +18,10 @@ function mastodon_post_init() {
 			'attributes'            => __( 'Mastodon Post Attributes', 'sync-mastodon' ),
 			'insert_into_item'      => __( 'Insert into Mastodon Post', 'sync-mastodon' ),
 			'uploaded_to_this_item' => __( 'Uploaded to this Mastodon Post', 'sync-mastodon' ),
-			'featured_image'        => _x( 'Featured Image', 'mastodon-post', 'sync-mastodon' ),
-			'set_featured_image'    => _x( 'Set featured image', 'mastodon-post', 'sync-mastodon' ),
-			'remove_featured_image' => _x( 'Remove featured image', 'mastodon-post', 'sync-mastodon' ),
-			'use_featured_image'    => _x( 'Use as featured image', 'mastodon-post', 'sync-mastodon' ),
+			'featured_image'        => _x( 'Featured Image', Sync_Mastodon_Options::get_post_type(), 'sync-mastodon' ),
+			'set_featured_image'    => _x( 'Set featured image', Sync_Mastodon_Options::get_post_type(), 'sync-mastodon' ),
+			'remove_featured_image' => _x( 'Remove featured image', Sync_Mastodon_Options::get_post_type(), 'sync-mastodon' ),
+			'use_featured_image'    => _x( 'Use as featured image', Sync_Mastodon_Options::get_post_type(), 'sync-mastodon' ),
 			'filter_items_list'     => __( 'Filter Mastodon Posts list', 'sync-mastodon' ),
 			'items_list_navigation' => __( 'Mastodon Posts list navigation', 'sync-mastodon' ),
 			'items_list'            => __( 'Mastodon Posts list', 'sync-mastodon' ),
@@ -66,7 +71,7 @@ function mastodon_post_updated_messages( $messages ) {
 
 	$permalink = get_permalink( $post );
 
-	$messages['mastodon-post'] = array(
+	$messages[Sync_Mastodon_Options::get_post_type()] = array(
 		0  => '', // Unused. Messages start at index 1.
 		/* translators: %s: post permalink */
 		1  => sprintf( __( 'Mastodon Post updated. <a target="_blank" href="%s">View Mastodon Post</a>', 'sync-mastodon' ), esc_url( $permalink ) ),

@@ -6,7 +6,7 @@ class Mastodon_Post {
 
 	public static function with_id( $id ) {
 		$posts = get_posts([
-			'post_type'  => 'mastodon-post',
+			'post_type'  => Sync_Mastodon_Options::get_post_type(),
 			'meta_query' => [
 				[
 					'key'   => 'mastodon_id',

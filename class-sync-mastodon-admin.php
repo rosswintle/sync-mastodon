@@ -31,6 +31,7 @@ class Sync_Mastodon_Admin {
 
 		$rss_url         = Sync_Mastodon_Options::get_rss_url();
 		$post_author      = Sync_Mastodon_Options::get_post_author();
+		$post_type      = Sync_Mastodon_Options::get_post_type();
 		$post_sync_status = Sync_Mastodon_Options::get_post_sync_status();
 
 		?>
@@ -68,6 +69,21 @@ class Sync_Mastodon_Admin {
 									<?php endforeach; ?>
 								</select>
 								<p class="description" id="tagline-description">All new posts synced will be assigned to this author.</p>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">
+								<label for="post-type">Sync'ed post post type</label>
+							</th>
+							<td>
+								<select name="post-type" id="post-type">
+									<?php foreach (get_post_types() as $this_type) : ?>
+										<option value="<?php echo esc_attr($this_type); ?>" <?php selected($post_type, $this_type); ?>>
+											<?php echo esc_html($this_type); ?>
+										</option>
+									<?php endforeach; ?>
+								</select>
+								<p class="description" id="tagline-description">All new posts synced will be assigned to this post type.</p>
 							</td>
 						</tr>
 						<tr>
@@ -130,6 +146,13 @@ class Sync_Mastodon_Admin {
 			&& is_a( get_user_by( 'ID', $_POST['post-author'] ), 'WP_User' )
 		) {
 			Sync_Mastodon_Options::set_post_author( $_POST['post-author'] );
+		}
+
+		if (
+			isset( $_POST['post-type'] )
+			&& in_array( $_POST['post-type'], get_post_types() )
+		) {
+			Sync_Mastodon_Options::set_post_type( $_POST['post-type'] );
 		}
 
 		if (
