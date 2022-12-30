@@ -78,6 +78,12 @@ class Sync_Mastodon_Core {
 
 			Sync_Mastodon::log( 'Syncing post: ' . $post->title );
 
+			$existing_post = Mastodon_Post::with_id( $post->id );
+			if ( $existing_post ) {
+				Sync_Mastodon::log( 'Existing post with ID ' . $existing_post->ID . ' found. Skipping.' );
+				continue;
+			}
+
 			$post_data = [
 				'post_type'    => 'mastodon-post',
 				'post_date'    => date( 'Y-m-d H:i:s', Sync_Mastodon::make_time_local( $post->created ) ),
@@ -92,12 +98,6 @@ class Sync_Mastodon_Core {
 				],
 				'post_author'  => $author_id,
 			];
-
-			$existing_post = Mastodon_Post::with_id( $post->id );
-			if ( $existing_post ) {
-				$post_data['ID'] = $existing_post->ID;
-				Sync_Mastodon::log( 'Existing post with ID ' . $existing_post->ID . ' found. Will update.' );
-			}
 
 			$result = wp_insert_post( $post_data );
 
