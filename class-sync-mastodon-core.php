@@ -89,7 +89,7 @@ class Sync_Mastodon_Core {
 
 			$post_data = [
 				'post_type'    => 'mastodon-post',
-				'post_date'    => date( 'Y-m-d H:i:s', Sync_Mastodon::make_time_local( $post->created ) ),
+				'post_date'    => date( 'Y-m-d H:i:s', Sync_Mastodon::make_time_local( $post->date ) ),
 				'post_title'   => empty ( $post->title ) ? date( 'Y-m-d H:i:s', Sync_Mastodon::make_time_local( $post->date ) ) : $post->title,
 				'post_content' => $post->content,
 				// 'post_status'  => 'yes' === $post->shared ? 'publish' : 'private',
