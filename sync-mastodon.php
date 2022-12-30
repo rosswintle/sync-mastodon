@@ -6,7 +6,7 @@
  * Author URI:      https://rosswintle.uk
  * Text Domain:     sync-mastodon
  * Domain Path:     /languages
- * Version:         1.0.0
+ * Version:         1.1.0
  *
  * @package         Sync_Mastodon
  */
