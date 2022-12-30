@@ -73,6 +73,9 @@ class Sync_Mastodon_Core {
 		// Get the author ID to use.
 		$author_id = Sync_Mastodon_Options::get_post_author();
 
+		// Added post count
+		$added_post_count = 0;
+
 		// Loop through posts creating posts for them.
 		foreach ( $new_posts as $post ) {
 
@@ -101,12 +104,21 @@ class Sync_Mastodon_Core {
 
 			$result = wp_insert_post( $post_data );
 
+			if ( is_wp_error( $result ) ) {
+				Sync_Mastodon::error( 'Error inserting post: ' . $result->get_error_message() );
+				continue;
+			} else {
+				$added_post_count++;
+			}
+
 			// TAXONOMIES?
 			// if ( $result > 0 ) {
 			// 	wp_set_post_terms( $result, $post->tags, 'mastodon-tag' );
 			// }
 
 		}
+
+		Sync_Mastodon::log( 'Added ' . $added_post_count . ' new posts' );
 
 		// Update last sync time
 		$this->last_sync = time();
