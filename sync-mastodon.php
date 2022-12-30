@@ -24,7 +24,6 @@ require_once __DIR__ . '/class-sync-mastodon-cron.php';
 require_once __DIR__ . '/class-sync-mastodon-wp-cli.php';
 require_once __DIR__ . '/class-mastodon-rss-api.php';
 require_once __DIR__ . '/class-sync-mastodon-core.php';
-// require_once 'blocks/bookmarks/bookmarks.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 /**
@@ -52,7 +51,6 @@ class Sync_Mastodon {
 		new Sync_Mastodon_Cron();
 		new Sync_Mastodon_Meta_Boxes();
 		new Sync_Mastodon_WPCLI();
-		// new Blocks\Bookmarks();
 	}
 
 	/**
