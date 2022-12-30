@@ -1,0 +1,15 @@
+{
+    "name": "rosswintle/sync-mastodon",
+    "description": "WordPress plugin to sync posts from a Mastodon RSS feed",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "license": "GPL2+",
+    "authors": [
+        {
+            "name": "Ross Wintle",
+            "email": "ross@oikos.org.uk"
+        }
+    ]
+}
