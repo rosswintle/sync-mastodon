@@ -50,6 +50,9 @@ Once you have installed and activated the plugin, follow the instructions in the
 
 == Changelog ==
 
+= 1.2.2 =
+* Removed Guzzle dependency - it's not used
+
 = 1.2.1 =
 * Fix RSS feed caching
 
