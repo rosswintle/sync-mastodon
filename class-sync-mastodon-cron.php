@@ -14,16 +14,16 @@ class Sync_Mastodon_Cron {
 		add_action( $this->hook_name, [ $this, 'sync' ] );
 
 		if ( ! wp_next_scheduled( $this->hook_name ) ) {
- 			wp_schedule_event( time(), 'fifteen_minutes', $this->hook_name );
+ 			wp_schedule_event( time(), 'five_minutes', $this->hook_name );
 		}
 
 		add_action( 'sync_mastodon_deactivate', [ $this, 'remove_cron' ] );
  	}
 
 	public function sync_mastodon_cron_interval( $schedules ) {
-    	$schedules['fifteen_minutes'] = [
-        	'interval' => 15 * 60,
-        	'display'  => esc_html__( 'Every Fifteen Minutes' ),
+    	$schedules['five_minutes'] = [
+        	'interval' => 5 * 60,
+        	'display'  => esc_html__( 'Every Five Minutes' ),
     	];
 
     	return $schedules;

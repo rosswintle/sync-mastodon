@@ -50,10 +50,13 @@ Once you have installed and activated the plugin, follow the instructions in the
 
 == Changelog ==
 
-= 1.0.0 =
-* Initial version based on [Sync Pinboard](https://wordpress.org/plugins/sync-pinboard/)
+= 1.2.0 =
+* Changes sync interval to five minutes
 
 = 1.1.0 =
 * Adds ability to select a post type to sync to
+
+= 1.0.0 =
+* Initial version based on [Sync Pinboard](https://wordpress.org/plugins/sync-pinboard/)
 
 == Upgrade Notice ==
