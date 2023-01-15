@@ -3,7 +3,7 @@
         'name' => 'rosswintle/sync-mastodon',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4f9cbf65c19d633aeee0a8d23692c908bda0ab98',
+        'reference' => '1101e770f7f865758272b6d49dde278426590d5d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -100,7 +100,7 @@
         'rosswintle/sync-mastodon' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4f9cbf65c19d633aeee0a8d23692c908bda0ab98',
+            'reference' => '1101e770f7f865758272b6d49dde278426590d5d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
