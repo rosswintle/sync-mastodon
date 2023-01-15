@@ -2,13 +2,21 @@
     "name": "rosswintle/sync-mastodon",
     "description": "WordPress plugin to sync posts from a Mastodon RSS feed",
     "type": "project",
-    "require": {
-    },
     "license": "GPL2+",
     "authors": [
         {
             "name": "Ross Wintle",
             "email": "ross@oikos.org.uk"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpstan/phpstan": "^1.9",
+        "szepeviktor/phpstan-wordpress": "^1.1",
+        "humanmade/coding-standards": "^1.2"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
 }

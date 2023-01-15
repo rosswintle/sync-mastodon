@@ -7,8 +7,16 @@ node_modules/
 *.sql
 *.tar.gz
 *.zip
-vendor/bin
-vendor/phpstan
-vendor/php-stubs
-vendor/szepeviktor
 
+# Exclude dev dependencies
+/vendor/automattic
+/vendor/bin
+/vendor/dealerdirect
+/vendor/fig-r
+/vendor/humanmade
+/vendor/php-stubs
+/vendor/phpcompatibility
+/vendor/phpstan
+/vendor/squizlabs
+/vendor/szepeviktor
+/vendor/wp-coding-standards
