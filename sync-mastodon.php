@@ -14,18 +14,18 @@
 
 namespace SyncMastodon;
 
-require_once __DIR__ . '/class-sync-mastodon-options.php';
-require_once __DIR__ . '/post-types/mastodon-post.php';
-require_once __DIR__ . '/data/class-mastodon-post.php';
-require_once __DIR__ . '/data/class-mastodon-media.php';
-require_once __DIR__ . '/post-types/class-mastodon-post.php';
-// require_once 'taxonomies/mastodon-tag.php';
-require_once __DIR__ . '/class-sync-mastodon-admin.php';
-require_once __DIR__ . '/class-sync-mastodon-meta-boxes.php';
-require_once __DIR__ . '/class-sync-mastodon-cron.php';
-require_once __DIR__ . '/class-sync-mastodon-wp-cli.php';
-require_once __DIR__ . '/class-mastodon-rss-api.php';
-require_once __DIR__ . '/class-sync-mastodon-core.php';
+require_once __DIR__ . '/src/class-sync-mastodon-options.php';
+require_once __DIR__ . '/src/post-types/mastodon-post.php';
+require_once __DIR__ . '/src/data/class-mastodon-post.php';
+require_once __DIR__ . '/src/data/class-mastodon-media.php';
+require_once __DIR__ . '/src/post-types/class-mastodon-post.php';
+// require_once '/src/taxonomies/mastodon-tag.php';
+require_once __DIR__ . '/src/class-sync-mastodon-admin.php';
+require_once __DIR__ . '/src/class-sync-mastodon-meta-boxes.php';
+require_once __DIR__ . '/src/class-sync-mastodon-cron.php';
+require_once __DIR__ . '/src/class-sync-mastodon-wp-cli.php';
+require_once __DIR__ . '/src/class-mastodon-rss-api.php';
+require_once __DIR__ . '/src/class-sync-mastodon-core.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
 /**
