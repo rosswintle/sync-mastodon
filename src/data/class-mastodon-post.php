@@ -1,4 +1,7 @@
 <?php
+/**
+ * Data clas for Mastodon RSS post objects
+ */
 
 namespace SyncMastodon\Data;
 
@@ -11,11 +14,15 @@ use SyncMastodon\Sync_Mastodon;
 class Mastodon_Post {
 
 	/**
+	 * The RSS ID of the post
+	 *
 	 * @var string
 	 */
 	public $id = '';
 
 	/**
+	 * The RSS permalink of the post
+	 *
 	 * @var string
 	 */
 	public $permalink = '';
@@ -90,7 +97,7 @@ class Mastodon_Post {
 				$post->media[] = Mastodon_Media::from_array(
 					[
 						'url'         => $media_item->get_link(),
-						'title'    => $media_item->get_title(),
+						'title'       => $media_item->get_title(),
 						'description' => $media_item->get_description(),
 					]
 				);

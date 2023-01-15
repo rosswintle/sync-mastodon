@@ -17,6 +17,7 @@
 		<exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag" />
 		<exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag" />
 		<exclude name="PEAR.Commenting.ClassComment.MissingLinkTag" />
+		<exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
     </rule>
 
 </ruleset>

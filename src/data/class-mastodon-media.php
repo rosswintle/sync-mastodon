@@ -1,4 +1,7 @@
 <?php
+/**
+ * A data class for Mastodon media items
+ */
 
 namespace SyncMastodon\Data;
 
@@ -10,16 +13,22 @@ use SyncMastodon\Sync_Mastodon;
 class Mastodon_Media {
 
 	/**
+	 * The URL of the media item
+	 *
 	 * @var string
 	 */
 	public $url = '';
 
 	/**
+	 * The title of the media item
+	 *
 	 * @var string
 	 */
 	public $title = '';
 
 	/**
+	 * The descrition (alt text) of the media item
+	 *
 	 * @var string
 	 */
 	public $description = '';
