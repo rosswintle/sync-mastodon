@@ -76,6 +76,12 @@ class Mastodon_API {
 		return $posts;
 	}
 
+	/**
+	 * Gets the latest posts from the RSS feed
+	 *
+	 * @param  array $options  Array of options to pass to the API. Currently unused.
+	 * @return Mastodon_Post[]
+	 */
 	public function posts_latest( $options = [] ) {
 		// We use a timestamp in a transient to suspend calls for a 1 seconds
 		// to avoid completely spamming the API.

@@ -17,6 +17,7 @@ namespace SyncMastodon;
 require_once __DIR__ . '/class-sync-mastodon-options.php';
 require_once __DIR__ . '/post-types/mastodon-post.php';
 require_once __DIR__ . '/data/class-mastodon-post.php';
+require_once __DIR__ . '/data/class-mastodon-media.php';
 require_once __DIR__ . '/post-types/class-mastodon-post.php';
 // require_once 'taxonomies/mastodon-tag.php';
 require_once __DIR__ . '/class-sync-mastodon-admin.php';

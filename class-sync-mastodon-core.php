@@ -31,12 +31,14 @@ class Sync_Mastodon_Core {
 
 		Sync_Mastodon::log( 'Getting last post from WordPress' );
 
-		$latest_posts = get_posts( [
-			'post_type' => Sync_Mastodon_Options::get_post_type(),
-			'posts_per_page' => 1,
-			'orderby' => 'date',
-			'order' => 'DESC',
-		] );
+		$latest_posts = get_posts(
+			[
+				'post_type' => Sync_Mastodon_Options::get_post_type(),
+				'posts_per_page' => 1,
+				'orderby' => 'date',
+				'order' => 'DESC',
+			]
+		);
 
 		if ( empty( $latest_posts ) ) {
 			Sync_Mastodon::log( 'No last post found. This will sync all!' );
@@ -46,6 +48,7 @@ class Sync_Mastodon_Core {
 			$latest_post_date = strtotime( $latest_posts[0]->post_date_gmt );
 		}
 
+		/** @var Mastodon_Post[] */
 		$new_posts = [];
 
 		Sync_Mastodon::log( 'Fetching Mastodon posts' );
@@ -107,9 +110,11 @@ class Sync_Mastodon_Core {
 			if ( is_wp_error( $result ) ) {
 				Sync_Mastodon::error( 'Error inserting post: ' . $result->get_error_message() );
 				continue;
-			} else {
-				$added_post_count++;
 			}
+
+			$added_post_count++;
+
+			$post->sideload_media( $result );
 
 			// TAXONOMIES?
 			// if ( $result > 0 ) {
