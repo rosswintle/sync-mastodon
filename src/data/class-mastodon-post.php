@@ -58,7 +58,7 @@ class Mastodon_Post {
 	/**
 	 * This is an array of URLs to media files
 	 *
-	 * @var Media_Item[]
+	 * @var Mastodon_Media[]
 	 */
 	public $media = [];
 
@@ -74,7 +74,7 @@ class Mastodon_Post {
 	/**
 	 * Create a new instance from a SimplePie RSS item object.
 	 *
-	 * @param  StdClass $data The data to create from.
+	 * @param  \StdClass $data The data to create from (actually a SimplePie_Item object)
 	 * @return self
 	 */
 	public static function from_rss_object( $data ) {

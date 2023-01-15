@@ -277,6 +277,53 @@
             "install-path": "../php-stubs/wordpress-stubs"
         },
         {
+            "name": "php-stubs/wp-cli-stubs",
+            "version": "v2.7.0",
+            "version_normalized": "2.7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wp-cli-stubs.git",
+                "reference": "428544fc3696273bfbb4cffe4ac88f5fed428fc8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wp-cli-stubs/zipball/428544fc3696273bfbb4cffe4ac88f5fed428fc8",
+                "reference": "428544fc3696273bfbb4cffe4ac88f5fed428fc8",
+                "shasum": ""
+            },
+            "require": {
+                "php-stubs/wordpress-stubs": "^4.7 || ^5.0 || ^6.0"
+            },
+            "require-dev": {
+                "php": "~7.3 || ~8.0",
+                "php-stubs/generator": "^0.8.0"
+            },
+            "suggest": {
+                "symfony/polyfill-php73": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "time": "2022-11-10T19:19:05+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "WP-CLI function and class declaration stubs for static analysis.",
+            "homepage": "https://github.com/php-stubs/wp-cli-stubs",
+            "keywords": [
+                "PHPStan",
+                "static analysis",
+                "wordpress",
+                "wp-cli"
+            ],
+            "support": {
+                "issues": "https://github.com/php-stubs/wp-cli-stubs/issues",
+                "source": "https://github.com/php-stubs/wp-cli-stubs/tree/v2.7.0"
+            },
+            "install-path": "../php-stubs/wp-cli-stubs"
+        },
+        {
             "name": "phpcompatibility/php-compatibility",
             "version": "9.3.5",
             "version_normalized": "9.3.5.0",
@@ -796,6 +843,7 @@
         "fig-r/psr2r-sniffer",
         "humanmade/coding-standards",
         "php-stubs/wordpress-stubs",
+        "php-stubs/wp-cli-stubs",
         "phpcompatibility/php-compatibility",
         "phpcompatibility/phpcompatibility-paragonie",
         "phpcompatibility/phpcompatibility-wp",

@@ -5,6 +5,7 @@
 
 namespace SyncMastodon;
 
+use SyncMastodon\Data\Mastodon_Post;
 use SyncMastodon\Mastodon_API;
 use SyncMastodon\Sync_Mastodon;
 use SyncMastodon\Sync_Mastodon_Options;
@@ -86,7 +87,7 @@ class Sync_Mastodon_Core {
 
 			Sync_Mastodon::log( 'Syncing post: ' . $post->title );
 
-			$existing_post = Mastodon_Post::with_id( $post->id );
+			$existing_post = \SyncMastodon\Mastodon_Post::with_id( $post->id );
 			if ( $existing_post ) {
 				Sync_Mastodon::log( 'Existing post with ID ' . $existing_post->ID . ' found. Skipping.' );
 				continue;
@@ -109,8 +110,8 @@ class Sync_Mastodon_Core {
 
 			$result = wp_insert_post( $post_data );
 
-			if ( is_wp_error( $result ) ) {
-				Sync_Mastodon::error( 'Error inserting post: ' . $result->get_error_message() );
+			if ( $result === 0 ) {
+				Sync_Mastodon::error( 'Error inserting post' );
 				continue;
 			}
 

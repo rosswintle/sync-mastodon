@@ -12,7 +12,8 @@
     "require-dev": {
         "phpstan/phpstan": "^1.9",
         "szepeviktor/phpstan-wordpress": "^1.1",
-        "humanmade/coding-standards": "^1.2"
+        "humanmade/coding-standards": "^1.2",
+        "php-stubs/wp-cli-stubs": "^2.7"
     },
     "config": {
         "allow-plugins": {

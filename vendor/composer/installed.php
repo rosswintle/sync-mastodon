@@ -3,7 +3,7 @@
         'name' => 'rosswintle/sync-mastodon',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '1101e770f7f865758272b6d49dde278426590d5d',
+        'reference' => '8260f662cb4de887db497aca347bf331f2816c50',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -61,6 +61,15 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
+        'php-stubs/wp-cli-stubs' => array(
+            'pretty_version' => 'v2.7.0',
+            'version' => '2.7.0.0',
+            'reference' => '428544fc3696273bfbb4cffe4ac88f5fed428fc8',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../php-stubs/wp-cli-stubs',
+            'aliases' => array(),
+            'dev_requirement' => true,
+        ),
         'phpcompatibility/php-compatibility' => array(
             'pretty_version' => '9.3.5',
             'version' => '9.3.5.0',
@@ -100,7 +109,7 @@
         'rosswintle/sync-mastodon' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1101e770f7f865758272b6d49dde278426590d5d',
+            'reference' => '8260f662cb4de887db497aca347bf331f2816c50',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
