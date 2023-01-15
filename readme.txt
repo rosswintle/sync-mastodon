@@ -3,7 +3,7 @@ Contributors: magicroundabout
 Tags: mastodon, sync, fediverse
 Requires at least: 5.1
 Tested up to: 6.1
-Stable tag: 1.0
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,7 @@ This plugin:
 * uses Mastodon RSS feeds and needs no authentication
 * rates-limits fetches
 * allows you to choose an author for synced posts
+* sideloads images from your Mastodon posts
 
 Note that this plugin does a one-way sync from Mastodon to your WordPress install. You can add your own posts in WordPress but they will not be cross-posted to Mastodon.
 
@@ -49,6 +50,9 @@ Once you have installed and activated the plugin, follow the instructions in the
 1. Options screen
 
 == Changelog ==
+
+= 1.3.0 =
+* Syncs images
 
 = 1.2.2 =
 * Removed Guzzle dependency - it's not used
